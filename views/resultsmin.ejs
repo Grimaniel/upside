@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resultados</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    .resultados-container {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    
+    .resultados-container h2 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="resultados-container">
+    <h2>Total de países</h2>
+    <p><%= count %></p>
+  </div>
+  
+  <div class="resultados-container">
+    <h2>Suma total de población</h2>
+    <p><%= totalPoblacion.toLocaleString() %></p>
+  </div>
+</body>
+</html>

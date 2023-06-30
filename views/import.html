@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cargar archivo JSON</title>
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .form-group input[type="file"] {
+      display: block;
+    }
+    .form-group button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cargar archivo JSON</h1>
+    <form id="jsonForm" enctype="multipart/form-data" action="/import" method="POST">
+      <div class="form-group">
+        <label for="jsonFile">Seleccione un archivo JSON:</label>
+        <input type="file" id="jsonFile" name="jsonFile" accept=".json">
+      </div>
+      <div class="form-group">
+        <button type="submit">Cargar archivo</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    /*
+    const form = document.getElementById('jsonForm');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const fileInput = document.getElementById('jsonFile');
+      const file = fileInput.files[0];
+      */
+      /*
+      if (file) {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        fetch('/import', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          // Aquí puedes manejar la respuesta del servidor después de cargar el archivo
+          console.log("data: ",data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
+      */
+      /*
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          const jsonData = event.target.result;
+          const parsedData = JSON.parse(jsonData);
+          console.log(parsedData);
+        };
+        reader.readAsText(file);
+      }
+    });
+    */
+  </script>
+</body>
+</html>

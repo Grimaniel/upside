@@ -1,0 +1,14 @@
+{
+  "Clear": {
+    "_id": [
+      "Clear"
+    ],
+    "count": 85
+  },
+  "Clouds": {
+    "_id": [
+      "Clouds"
+    ],
+    "count": 25
+  }
+}

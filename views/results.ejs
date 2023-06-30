@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados de importación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    .export-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Resultados de importación</h1>
+  
+  <p>Cantidad de registros importados: <%= count %></p>
+  
+  <h2>Agrupación de ciudades por clima:</h2>
+  <h3>Total Grupos: <%= group %> </h3>
+  <ul>
+    <% Object.entries(climaCiudades).forEach(([clima, item]) => { %>
+      <li><strong><%= clima %></strong>: <%= item.count %> ciudades</li>
+    <% }); %>
+  </ul>
+
+  <form id="exportForm" action="/export" method="POST">
+    <input type="hidden" name="climaCiudades" value="<%= JSON.stringify(climaCiudades) %>">
+    <button type="submit" class="export-btn">Exportar JSON</button>
+  </form>
+
+</body>
+</html>
